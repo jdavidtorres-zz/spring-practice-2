@@ -1,8 +1,12 @@
 plugins {
 	id 'org.springframework.boot' version '2.3.1.RELEASE'
-	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
 	id 'java'
+	id 'application'
+	id 'eclipse'
+	id 'idea'
 }
+
+apply plugin: 'io.spring.dependency-management'
 
 group = 'co.com.jdti.practice'
 version = '0.0.1'
