@@ -1,4 +1,4 @@
-package co.com.jdti.practice.conference.app;
+package co.com.jdti.practice.conference;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
