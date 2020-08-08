@@ -32,7 +32,8 @@ public class SessionsController {
         return sessionRepository.saveAndFlush(session);
     }
 
-    @RequestMapping(value = "{id}", method = RequestMethod.DELETE)
+    @DeleteMapping
+    @RequestMapping(value = "{id}")
     public void delete(@PathVariable Long id) {
         sessionRepository.deleteById(id);
     }
