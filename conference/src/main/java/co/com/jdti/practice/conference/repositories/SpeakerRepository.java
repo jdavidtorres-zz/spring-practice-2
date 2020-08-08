@@ -1,10 +1,10 @@
 package co.com.jdti.practice.conference.repositories;
 
-import co.com.jdti.practice.conference.models.Session;
+import co.com.jdti.practice.conference.models.Speaker;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface SessionRepository extends JpaRepository<Session, Long> {
+public interface SpeakerRepository extends JpaRepository<Speaker, Long> {
 
 }
