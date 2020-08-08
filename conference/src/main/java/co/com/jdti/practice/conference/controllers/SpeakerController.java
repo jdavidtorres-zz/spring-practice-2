@@ -16,7 +16,7 @@ public class SpeakerController {
     @Autowired
     private SpeakerRepository speakerRepository;
 
-    @GetMapping
+    @GetMapping("/all")
     public List<Speaker> list() {
         return speakerRepository.findAll();
     }
@@ -34,13 +34,13 @@ public class SpeakerController {
     }
 
     @DeleteMapping
-    @RequestMapping(value = "{id}")
+    @RequestMapping(value = "/delete/{id}")
     public void delete(@PathVariable Long id) {
         speakerRepository.deleteById(id);
     }
 
     @PutMapping
-    @RequestMapping(value = "{id}")
+    @RequestMapping(value = "/update/{id}")
     public Speaker update(@PathVariable Long id, @RequestBody Speaker speaker) {
         Speaker existingSpeaker = speakerRepository.getOne(id);
         BeanUtils.copyProperties(speaker, existingSpeaker, "speaker_id");

@@ -16,7 +16,7 @@ public class SessionsController {
     @Autowired
     private SessionRepository sessionRepository;
 
-    @GetMapping
+    @GetMapping("/all")
     public List<Session> list() {
         return sessionRepository.findAll();
     }
@@ -34,13 +34,13 @@ public class SessionsController {
     }
 
     @DeleteMapping
-    @RequestMapping(value = "{id}")
+    @RequestMapping(value = "/delete/{id}")
     public void delete(@PathVariable Long id) {
         sessionRepository.deleteById(id);
     }
 
     @PutMapping
-    @RequestMapping(value = "{id}")
+    @RequestMapping(value = "/update/{id}")
     public Session update(@PathVariable Long id, @RequestBody Session session) {
         Session existingSession = sessionRepository.getOne(id);
         BeanUtils.copyProperties(session, existingSession, "session_id");
