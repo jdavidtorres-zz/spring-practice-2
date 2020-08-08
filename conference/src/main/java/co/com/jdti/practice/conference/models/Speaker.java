@@ -1,6 +1,14 @@
 package co.com.jdti.practice.conference.models;
 
-import javax.persistence.*;
+import org.hibernate.annotations.*;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Lob;
+import javax.persistence.ManyToMany;
 import java.util.List;
 
 @Entity(name = "speakers")
@@ -27,6 +35,8 @@ public class Speaker {
     private String speakerBio;
 
     @Column(name = "speaker_photo")
+    @Lob
+    @Type(type = "org.hibernate.type.BinaryType")
     private byte[] speakerPhoto;
 
     @ManyToMany(mappedBy = "speakers")
