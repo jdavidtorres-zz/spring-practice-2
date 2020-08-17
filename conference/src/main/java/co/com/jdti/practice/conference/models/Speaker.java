@@ -1,5 +1,7 @@
 package co.com.jdti.practice.conference.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.*;
 
 import javax.persistence.Column;
@@ -9,9 +11,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 import java.util.List;
 
 @Entity(name = "speakers")
+@Table
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Speaker {
 
     @Id
@@ -39,6 +44,7 @@ public class Speaker {
     @Type(type = "org.hibernate.type.BinaryType")
     private byte[] speakerPhoto;
 
+    @JsonIgnore
     @ManyToMany(mappedBy = "speakers")
     private List<Session> sessions;
 

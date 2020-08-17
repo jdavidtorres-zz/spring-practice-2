@@ -43,7 +43,7 @@ public class SessionsController {
     @RequestMapping(value = "/update/{id}")
     public Session update(@PathVariable Long id, @RequestBody Session session) {
         Session existingSession = sessionRepository.getOne(id);
-        BeanUtils.copyProperties(session, existingSession, "session_id");
+        BeanUtils.copyProperties(session, existingSession, "idSession");
         return sessionRepository.saveAndFlush(existingSession);
     }
 

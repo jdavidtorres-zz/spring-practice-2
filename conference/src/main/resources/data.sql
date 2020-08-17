@@ -19,8 +19,6 @@ VALUES (1,'P','E',800),
        (8,'C','R',200),
        (9,'C','L',300);
 
--- TODO: discount_codes
-
 INSERT INTO time_slots (time_slot_id,time_slot_date,start_time,end_time,is_keynote_time_slot)
 VALUES (1,'2020-04-09','9:00','9:45',TRUE),
        (2,'2020-04-09','10:00','11:00',FALSE),
