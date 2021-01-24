@@ -1,5 +1,5 @@
 plugins {
-	id 'org.springframework.boot' version '2.3.2.RELEASE'
+	id 'org.springframework.boot' version '2.3.4.RELEASE'
 	id 'java'
 	id 'application'
 	id 'eclipse'
@@ -9,6 +9,7 @@ plugins {
 apply plugin: 'io.spring.dependency-management'
 
 group = 'co.com.jdti.practice'
+mainClassName = 'co.com.jdti.practice.ConferenceApplication'
 version = '0.0.1'
 sourceCompatibility = '11'
 
